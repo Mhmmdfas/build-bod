@@ -39,8 +39,7 @@ export outdir="out/target/product/$device"
 # Initialize repo
 repo init -u "$manifest_url" -b "$branch" --depth 1 &> /dev/null
 trim_darwin &> /dev/null
-echo "Sync started for $manifest_url"
-telegram -M "Sync Started for [$ROM]($manifest_url)"
+echo "Sync started for $manifest_url
 
 # Reset bash timer and begin syncing
 SECONDS=0
@@ -72,20 +71,16 @@ Build Started: [See Progress]($ci_url)"
 Date: $(env TZ="$timezone" date)" "$finalzip_path"
 
         echo "Uploaded"
-
-        telegram -M "Build completed successfully in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)
-
+	
 Download: [$zip_name](https://github.com/$release_repo/releases/download/$zip_name/"$zip_name".zip)"
 
     else
 		# Build failed
         echo "ALERT: Build failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
-        telegram -N -M "ALERT: Build failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
         exit 1
     fi
 else
 	# Sync failed
     echo "ALERT: Sync failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
-    telegram -N -M "ALERT: Sync failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
     exit 1
 fi
