@@ -10,9 +10,13 @@ echo $TELEGRAM_TOKEN >/tmp/tg_token
 echo $TELEGRAM_CHAT >/tmp/tg_chat
 echo $GITHUB_TOKEN >/tmp/gh_token
 
-sudo echo "ci ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
-useradd -m -d /home/ci ci
-useradd -g ci wheel
-cp github-release /usr/bin
-cp telegram /usr/bin
-sudo -Hu ci bash -c "bash build.sh"
+chmod +x github-release
+chmod +x telegram
+mkdir -p ~/bin
+wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
+chmod +x ~/bin/repo
+export PATH=~/bin:$PATH
+export USE_CCACHE=1
+sudo apt-get update
+sudo apt-get install liblz4-dev
+bash ./build.sh
