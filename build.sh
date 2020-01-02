@@ -63,16 +63,7 @@ if repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimiz
 		export zip_name=$(basename -s "$finalzip_path")
         echo "Build completed successfully in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
         echo "Uploading"
-
-        github-release "$release_repo" "$zip_name" "master" "$ROM for $device
-
+github-release "$release_repo" "$zip_name" "master" "$ROM for $device
 Date: $(env TZ="$timezone" date)" "$finalzip_path"
-
-        echo "Uploaded"
-	
 Download: {$zip_name}{https://github.com/$release_repo/releases/download/$zip_name/"$zip_name".zip}
-echo "done"
-{
-bngst
-}
-# done build
+echo "ok done"
