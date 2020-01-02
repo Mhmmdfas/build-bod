@@ -1,17 +1,19 @@
 #!/bin/bash
 
-GITHUB_USER="ghostrider-reborn"
-GITHUB_EMAIL="gh0strider.2k18.reborn@gmail.com" 
+GITHUB_USER=mhmmdfas
+GITHUB_EMAIL=fadlyardhians@outlook.com
 
-export KBUILD_BUILD_USER="starlord"
-export KBUILD_BUILD_HOST="milano"
+KBUILD_BUILD_USER="mhmmdfas"
+KBUILD_BUILD_HOST="mhmmdfas"
 
-export oem=lenovo
-export device=A6020
-export rom_vendor_name="aosp" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
+export oem=xiaomi
+export device=rolex
 
-ROM="PixelExperience"
-manifest_url="https://github.com/PixelExperience/manifest"
-branch="pie"
+ROM="CardianAosp"
+manifest_url="https://github.com/Cardinal-AOSP/manifest"
+export rom_vendor_name="cardinal"
+branch="oreo-mr1"
 
-timezone="Asia/Kolkata"
+release_repo="mhmmdfas/bjir_sur"
+
+timezone="Asia/Jakarta"
