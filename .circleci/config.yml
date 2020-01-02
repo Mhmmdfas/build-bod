@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: baalajimaestro/android_build:latest
+    steps:
+      - run: git clone -j32 https://github.com/Mhmmdfas/build-bod  .
+      - run: bash ./setup.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - build
