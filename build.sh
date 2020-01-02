@@ -47,11 +47,9 @@ if repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimiz
 	# Syncing completed, clone custom repos if any
 	bash ./clone.sh
 
-	echo "Sync completed successfully in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
     echo "Build Started"
-    telegram -M "Sync completed successfully in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)
-
-Build Started: [See Progress]($ci_url)"
+  
+    Started: [See Progress]($ci_url)"
 	
 	# Reset bash timer and begin compilation
     SECONDS=0
