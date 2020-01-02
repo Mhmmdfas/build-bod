@@ -2,8 +2,8 @@
 # clone repos for Cardinal - rolex
 
 GITHUB='https://github.com/ghostrider-reborn'
-BRANCH="cardinal"
+BRANCH="lineage-15.1"
 
-git clone -b $BRANCH $GITHUB/android_device_lenovo_A6020 device/lenovo/A6020
-git clone -b $BRANCH $GITHUB/android_vendor_lenovo_A6020 vendor/lenovo/A6020
-git clone -b $BRANCH $GITHUB/android_kernel_lenovo_msm8916 kernel/lenovo/msm8916
+git clone -b $BRANCH $GITHUB/android-device-xiaomi-rolex device/xiaomi/rolex
+git clone -b $BRANCH $GITHUB/android-vendor-xiaomi vendor/xiaomi/
+git clone -j32 -b staging --depth=1 $GITHUB/android_kernel_xiaomi_msm8917-2 kernel/xiaomi/msm8917
