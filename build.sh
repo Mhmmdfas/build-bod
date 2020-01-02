@@ -74,11 +74,11 @@ Download: {$zip_name}{https://github.com/$release_repo/releases/download/$zip_na
 
     else
 		# Build failed
-        echo "ALERT: Build failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
+        echo "ALERT: Build failed"
         exit 1
     fi
 else
 	# Sync failed
-    echo "ALERT: Sync failed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
+    echo "ALERT: Sync failed"
     exit 1
 fi
