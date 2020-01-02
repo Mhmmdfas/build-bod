@@ -1,8 +1,8 @@
 #!/bin/bash
-# clone repos for PixelExperience - A6020
+# clone repos for Cardinal - rolex
 
 GITHUB='https://github.com/ghostrider-reborn'
-BRANCH="pie"
+BRANCH="cardinal"
 
 git clone -b $BRANCH $GITHUB/android_device_lenovo_A6020 device/lenovo/A6020
 git clone -b $BRANCH $GITHUB/android_vendor_lenovo_A6020 vendor/lenovo/A6020
