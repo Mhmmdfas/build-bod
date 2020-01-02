@@ -70,7 +70,7 @@ Date: $(env TZ="$timezone" date)" "$finalzip_path"
 
         echo "Uploaded"
 	
-Download: [$zip_name](https://github.com/$release_repo/releases/download/$zip_name/"$zip_name".zip)"
+Download: {$zip_name}{https://github.com/$release_repo/releases/download/$zip_name/"$zip_name".zip}"
 
     else
 		# Build failed
