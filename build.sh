@@ -71,14 +71,4 @@ Date: $(env TZ="$timezone" date)" "$finalzip_path"
         echo "Uploaded"
 	
 Download: {$zip_name}{https://github.com/$release_repo/releases/download/$zip_name/"$zip_name".zip}"
-
-    else
-		# Build failed
-        echo "ALERT: Build failed"
-        exit 1
-    fi
-else
-	# Sync failed
-    echo "ALERT: Sync failed"
-    exit 1
-fi
+# End Build
