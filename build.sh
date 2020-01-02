@@ -44,7 +44,7 @@ telegram -M "Sync Started for [$ROM]($manifest_url)"
 
 # Reset bash timer and begin syncing
 SECONDS=0
-if repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all) -q &> /dev/null; then
+if repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j16 -q &> /dev/null; then
 	# Syncing completed, clone custom repos if any
 	bash ./clone.sh
 
@@ -57,7 +57,7 @@ Build Started: [See Progress]($ci_url)"
 	# Reset bash timer and begin compilation
     SECONDS=0
     source build/envsetup.sh &> /dev/null
-    if [ -e "device/$oem/$device" ]; then python3 /drone/src/dependency_cloner.py; fi
+    if [ -e "device/$oem/$device" ]; then python3 ./dependency_cloner.py; fi
     lunch $rom_vendor_name_$device-userdebug &> /dev/null
 
     if mka bacon | grep $device; then
