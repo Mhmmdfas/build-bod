@@ -13,6 +13,6 @@ echo $GITHUB_TOKEN >/tmp/gh_token
 sudo echo "ci ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 useradd -m -d /home/ci ci
 useradd -g ci wheel
-sudo cp github-release /usr/bin
-sudo cp telegram /usr/bin
+cp github-release /usr/bin
+cp telegram /usr/bin
 sudo -Hu ci bash -c "bash build.sh"
